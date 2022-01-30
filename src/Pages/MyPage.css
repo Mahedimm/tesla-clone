@@ -1,0 +1,48 @@
+.myPage {
+  width: 100%;
+}
+
+.myPage__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 140px;
+  padding-bottom: 30px;
+}
+.myPage__person > h4 {
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: x-large;
+}
+.myPage__infoRight {
+  display: flex;
+  gap: 20px;
+}
+.myPage__infoRight > a {
+  text-decoration: none;
+  color: #393c41;
+  font-size: smaller;
+  transition: all 0.3s;
+  text-transform: capitalize;
+}
+.myPage__infoRight > a:hover {
+  color: black;
+  font-weight: 500;
+}
+
+.myPage__car {
+  display: grid;
+  place-items: center;
+  gap: 30px;
+  padding-bottom: 40px;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.myPage__car::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.myPage__car {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

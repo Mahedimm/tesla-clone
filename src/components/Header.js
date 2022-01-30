@@ -1,4 +1,4 @@
-import CloseIcon from '@mui/icons-material/Close';
+import CloseIcon from '@material-ui/icons/Close';
 import MenuIcon from '@mui/icons-material/Menu';
 import React from 'react';
 import { Link } from 'react-router-dom';

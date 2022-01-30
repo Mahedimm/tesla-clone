@@ -1,0 +1,30 @@
+.account__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+}
+
+.account__logo > a > img {
+  object-fit: contain;
+  width: 90px;
+}
+
+.account__language {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 50px;
+  font-size: 15px;
+  transition: all 0.3s;
+}
+
+.account__language:hover {
+  background-color: hsla(0, 0%, 50.2%, 0.125);
+}
+.account__language > span {
+  font-weight: 500;
+}
