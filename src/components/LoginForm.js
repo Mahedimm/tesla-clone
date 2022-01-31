@@ -1,13 +1,14 @@
+import { signInWithEmailAndPassword } from "firebase/auth";
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import initialize from "../Firebase/firebase.initialize";
+import { login } from '../features/useSlice';
+import { auth } from '../Firebase/firebase.config';
 import ButtonPrimary from './ButtonPrimary';
 import './Form.css';
 import Input from './Input';
 
-initialize();
 const LoginForm = () => {
     const { register, handleSubmit,formState: { errors } } = useForm();
 
@@ -18,17 +19,17 @@ const LoginForm = () => {
       console.log(data);
    
     
-        // auth.signInWithEmailAndPassword(data.Email,data.Password).then((userAuth) => {
-        //     dispatch(
-        //       login({
-        //         email: userAuth.user.email,
-        //         uid: userAuth.user.uid,
-        //         displayName: userAuth.user.displayName,
-        //       })
-        //     )
-        //     navigate('/account');
-        //   })
-        //   .catch((error) => alert(error.message))
+       signInWithEmailAndPassword(auth,data.Email,data.Password).then((userAuth) => {
+            dispatch(
+              login({
+                email: userAuth.user.email,
+                uid: userAuth.user.uid,
+                displayName: userAuth.user.displayName,
+              })
+            )
+            navigate('/myPage');
+          })
+          .catch((error) => alert(error.message))
     }
     return (
         <form className="login__form" onSubmit={handleSubmit(onSubmit)}>
